@@ -1,0 +1,40 @@
+<!-- Título de la página -->
+<h1 class="page-title text-center my-4">Administrador de Tareas</h1>
+
+<!-- Botón para agregar tarea -->
+<div class="text-center mb-4">
+  <button (click)="startCreatingTask()" class="btn btn-success">Crear nueva tarea</button>
+
+</div>
+
+<!-- Tabla de tareas -->
+<div class="table-responsive" >
+  <table datatable [dtOptions]="dtOptions" class="table table-striped table-bordered" >
+    <thead>
+      <tr>
+        <th>TITULO</th>
+        <th>DESCRIPCION</th>
+        <th>ACCIONES</th>
+      </tr>
+    </thead>
+      <tbody >
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.title }}</td>
+          <td>{{ task.description }}</td>
+          <td class="action-buttons">
+            <button (click)="startEditingTask(task)" class="btn btn-warning mr-2">EDITAR</button>
+            <button (click)="deleteTask(task._id)" class="btn btn-danger">BORRAR</button>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+
+<!-- Modales (Formularios) -->
+<app-modal modalId="addTaskModal" modalTitle="Add Task" [showSaveButton]="true" (saveClicked)="addTask()">
+  <app-task-form [task]="selectedTask" [mode]="editMode ? 'edit' : 'create'" (taskChange)="editTask()"></app-task-form>
+</app-modal>
+
+<app-modal modalId="editTaskModal" modalTitle="Edit Task" [showSaveButton]="true" (saveClicked)="editTask()">
+  <app-task-form [task]="selectedTask" [mode]="editMode ? 'edit' : 'create'" (taskChange)="editTask()"></app-task-form>
+</app-modal>

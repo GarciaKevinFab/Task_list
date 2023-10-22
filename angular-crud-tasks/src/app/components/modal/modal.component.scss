@@ -1,0 +1,53 @@
+.custom-modal {
+    .modal-content {
+        border: none;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+        .modal-header {
+            background-color: #ff4747; 
+            color: white;
+
+            .modal-title {
+                font-size: 1.5em;
+            }
+
+            .btn-close {
+                background-color: rgba(255, 255, 255, 0.3);
+                border: none;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.5);
+                }
+            }
+        }
+
+        .modal-body {
+            background-color: #fafafa; 
+        }
+
+        .modal-footer {
+            background-color: #f5f5f5; 
+
+            .btn {
+                &.btn-primary {
+                    background-color: #ff4747;
+                    border: none;
+
+                    &:hover {
+                        background-color: darken(#ff4747, 10%);
+                    }
+                }
+
+                &.btn-secondary {
+                    background-color: white;
+                    border: 1px solid #ddd;
+                    color: #555;
+
+                    &:hover {
+                        background-color: #f0f0f0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<form>
+  <div class="mb-4">
+    <label for="title" class="form-label fw-bold text-uppercase">TITULO</label>
+    <div class="input-group mb-2">
+      <span class="input-group-text bg-white border-end-0" id="title-icon">
+        <i class="bi bi-file-text"></i> 
+      </span>
+      <input type="text" class="form-control border-start-0 rounded-end" id="title" [(ngModel)]="task.title" name="title" placeholder="Introduce el título">
+    </div>
+  </div>
+  <div class="mb-4">
+    <label for="description" class="form-label fw-bold text-uppercase">DESCRIPCION</label>
+    <textarea class="form-control" id="description" rows="5" [(ngModel)]="task.description" name="description" placeholder="Introduce la descripción"></textarea>
+  </div>
+</form>
